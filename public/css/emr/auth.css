@@ -1,0 +1,31 @@
+.emr_left {
+    background-image: url('https://res.cloudinary.com/dm55zqb0d/image/upload/v1716456138/careone/auth_left_afpddy.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emr_right {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emr_inner_right {
+    width: 75%;
+}
+
+@media screen and (max-width: 900px) {
+    .emr_left {
+        display: none;
+    }
+
+    .emr_inner_right {
+        width: 90%;
+    }
+}

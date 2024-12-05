@@ -1,0 +1,43 @@
+.settings-options {
+    height: 44px;
+    width: 187px;
+    border-radius: 8px;
+    gap: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20px;
+    margin-block: 10px;
+}
+
+/* .settings-options.inactive {
+    background-color: #fff;
+} */
+
+.settings-options p {
+    color: #1A1C1E;
+}
+
+.settings-options.active p {
+    color: #5FC1C4;
+}
+
+.settings-options.active {
+
+    background-color: #EFFEFF;
+}
+
+.settings-options.active svg path {
+    stroke: #5FC1C4;
+    /* stroke-width: ;
+    stroke-linecap: ;
+    stroke-linejoin: ; */
+}
+
+.settings-btn-bg{
+    background-color: #2B7F75;
+}
+
+.settings-btn{
+    height: 40px;
+}

@@ -1,36 +1,55 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
+    <meta charset="UTF-8">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
+    @include('components.imports.css_imports')
+    @include('components.imports.scripts_imports')
+    <title>{{ 'Hebrew App' }}</title>
 
-            <!-- Page Heading -->
-            @isset($header)
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endisset
+</head>
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+<body>
+
+    <div class="d-flex">
+        @include('components.navbar.navbar')
+
+
+        @if(auth()->user())
+
+        <div class="left_side" id="sideBar">
+            <div class="sidebar_parent">
+                @include('components.sidebar.sidebar')
+            </div>
         </div>
-    </body>
+        @endif
+        <div class="right_side">
+            <div class="content_parent" style="width: 100%">
+                @yield('content')
+            </div>
+
+        </div>
+
+        @include('components.others.flashMessage')
+    </div>
+</body>
+
+<script>
+    var status = "closed"
+    var side = document.getElementById("sideBar")
+    const openSideBar = () => {
+        if (status == "closed") {
+            side.style.left = "0"
+            status = "opened"
+        } else {
+            side.style.left = "-100%"
+            status = "closed"
+        }
+    }
+</script>
 </html>
