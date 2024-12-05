@@ -25,5 +25,8 @@ RUN composer install --no-dev --optimize-autoloader
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
+# Expose the required port for Render
+EXPOSE 80
+
 # Start the application
 CMD ["/start.sh"]
