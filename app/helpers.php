@@ -87,7 +87,7 @@ if (!function_exists('mainMenu')) {
             [
                 "title" => "מיקוד אוטומטי",
                 "slug" => "automatic-focus",
-                "link" => "/dashboard/automatic-focus",
+                "link" => "/dashboard/postal",
                 "svg" => "automatic-focus-svg",
                 'permissions' => 'automatic-focus'
             ],

@@ -807,7 +807,10 @@ border: 1px solid #C6C6C6;
 
 .accordion-button{
     height: 35px;
+    display:flex;
+    justify-content:space-between;
 }
+
 
 /* Hide the default Bootstrap accordion icon */
 .accordion-button::after {
@@ -826,6 +829,12 @@ border: 1px solid #C6C6C6;
 
 .accordion-button:not(.collapsed) .icon::before {
     content: '-'; /* Minus icon when expanded */
+}
+
+.accordion-button:not(.collapsed) {
+    color: #0D0D0D !important;
+    background-color: transparent !important;
+    box-shadow: none
 }
 
 

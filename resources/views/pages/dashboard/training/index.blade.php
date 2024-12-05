@@ -26,15 +26,48 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
                             <div class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="display: flex; justify-content:space-between">
-                                Accordion Item #1
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"
+                                style="display: flex; justify-content:space-between">
+                                התחלת עבודה עם אפליקציית עברית
                                 <span class="icon"></span>
                             </div>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                             data-bs-parent="#training">
                             <div class="accordion-body">
-                                <strong>This is the first item's accordion body.</strong> It is shown by default...
+
+                                <div class="d-flex gap-3 aic jcs">
+                                    <div>@include('components.svgs.play-svg')</div>
+                                    <p class="fs14">איך לנווט באפליקציה בעברית</p>
+                                    <p class="fs14" style="color:#777777">00:45</p>
+                                </div>
+                                <hr />
+                                <div class="d-flex gap-3 aic jcs">
+                                    <div>@include('components.svgs.play-svg')</div>
+                                    <p class="fs14">
+                                        איך להירשם לחבילות פרימיום
+                                    </p>
+                                    <p class="fs14" style="color:#777777">00:45</p>
+                                </div>
+                                <hr />
+                                <div class="d-flex gap-3 aic jcs">
+                                    <div>@include('components.svgs.play-svg')</div>
+                                    <p class="fs14">
+                                        כרטיסיות ניווט ופונקציות
+                                    </p>
+                                    <p class="fs14" style="color:#777777">00:45</p>
+                                </div>
+                                <hr />
+                                <div class="d-flex gap-3 aic jcs">
+                                    <div>@include('components.svgs.play-svg')</div>
+                                    <p class="fs14">
+                                        כל מה שצריך לדעת על אפליקציית עברית
+                                    </p>
+                                    <p class="fs14" style="color:#777777">00:45</p>
+                                </div>
+
+
+
                             </div>
                         </div>
                     </div>
@@ -42,14 +75,14 @@
                         <h2 class="accordion-header" id="headingTwo">
                             <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Accordion Item #2
+                                תכונות מרכזיות של אפליקציה בעברית (חלק 1)
                                 <span class="icon"></span>
                             </div>
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                             data-bs-parent="#training">
                             <div class="accordion-body">
-                                <strong>This is the second item's accordion body.</strong> It is hidden by default...
+
                             </div>
                         </div>
                     </div>
@@ -57,14 +90,29 @@
                         <h2 class="accordion-header" id="headingThree">
                             <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Accordion Item #3
+                                פונקציות מרכזיות של אפליקציה בעברית (חלק 2)
                                 <span class="icon"></span>
                             </div>
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                             data-bs-parent="#training">
                             <div class="accordion-body">
-                                <strong>This is the third item's accordion body.</strong> It is hidden by default...
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                תכונות מרכזיות של אפליקציה בעברית (חלק 3)
+                                <span class="icon"></span>
+                            </div>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#training">
+                            <div class="accordion-body">
+
                             </div>
                         </div>
                     </div>

@@ -12,6 +12,7 @@ use App\Http\Controllers\AccessibilityController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\AlertsController;
 use App\Http\Controllers\TrainingController;
+use App\Http\Controllers\PostalController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -70,6 +71,10 @@ Route::prefix('dashboard')->name('dashboard.')->group(function () {
     // training
     Route::prefix('training')->name('training.')->group(function () {
         Route::get('/', [TrainingController::class, 'index'])->name('index');
+    });
+    // postal
+    Route::prefix('postal')->name('postal.')->group(function () {
+        Route::get('/', [PostalController::class, 'index'])->name('index');
     });
 });
 
