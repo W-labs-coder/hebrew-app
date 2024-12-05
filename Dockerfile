@@ -4,7 +4,7 @@ FROM richarvey/nginx-php-fpm:latest
 COPY . /var/www/html
 
 # Set environment variables
-ENV SKIP_COMPOSER 0 # Ensure Composer runs
+ENV SKIP_COMPOSER 0
 ENV WEBROOT /var/www/html/public
 ENV PHP_ERRORS_STDERR 1
 ENV RUN_SCRIPTS 1
@@ -25,11 +25,11 @@ RUN composer install --no-dev --optimize-autoloader
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Update Nginx to use Render's dynamically assigned port
+# Update Nginx to bind to Render's port
 RUN sed -i 's/listen 80;/listen ${PORT};/' /etc/nginx/sites-available/default.conf
 
-# Expose the port for Render
+# Expose the default port
 EXPOSE 80
 
 # Start the application
-CMD ["/bin/bash", "-c", "envsubst < /etc/nginx/sites-available/default.conf > /etc/nginx/sites-available/default.conf && /start.sh"]
+CMD ["/bin/bash", "-c", "/start.sh && tail -f /var/log/nginx/error.log /var/log/php7.4-fpm.log"]
