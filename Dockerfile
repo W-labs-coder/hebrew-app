@@ -25,8 +25,11 @@ RUN composer install --no-dev --optimize-autoloader
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Expose the required port for Render
+# Update Nginx to use Render's dynamically assigned port
+RUN sed -i 's/listen 80;/listen ${PORT};/' /etc/nginx/sites-available/default.conf
+
+# Expose the port for Render
 EXPOSE 80
 
 # Start the application
-CMD ["/start.sh"]
+CMD ["/bin/bash", "-c", "envsubst < /etc/nginx/sites-available/default.conf > /etc/nginx/sites-available/default.conf && /start.sh"]
